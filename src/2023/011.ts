@@ -1,10 +1,5 @@
-import * as lodash from "lodash"
 import registry from "../registry"
-registry[2023] = lodash.merge(registry[2023], {
-    [1]: {
-        [1]: (input: string) => new Solver(input).solution
-    }
-})
+registry.addElement(2023, 1, 1, (input: string) => new Solver(input).solution)
 
 class MyString extends String {
     public readonly revert = (): string => {

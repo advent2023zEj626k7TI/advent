@@ -13,14 +13,17 @@ const body = document.querySelector("body")!
 const yearInput = document.createElement("input")
 yearInput.placeholder = "year"
 yearInput.type = "number"
+yearInput.value = "2023"
 body.appendChild(yearInput)
 const dayInput = document.createElement("input")
 dayInput.placeholder = "day"
 dayInput.type = "number"
+dayInput.value = "4"
 body.appendChild(dayInput)
 const partInput = document.createElement("input")
 partInput.placeholder = "part"
 partInput.type = "number"
+partInput.value = "2"
 body.appendChild(partInput)
 const input = document.createElement("textarea")
 input.placeholder = "input"
@@ -34,7 +37,7 @@ output.placeholder = "output"
 output.disabled = true
 body.appendChild(output)
 button.onclick = () => {
-    const func = registry[yearInput.valueAsNumber]?.[dayInput.valueAsNumber]?.[partInput.valueAsNumber]
+    const func = registry.getElement(yearInput.valueAsNumber, dayInput.valueAsNumber, partInput.valueAsNumber)
     if (func) {
         output.value = func(input.value)
     } else {
