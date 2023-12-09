@@ -1,3 +1,5 @@
+import "./2023/082"
+import "./2023/081"
 import "./2023/072"
 import "./2023/071"
 import "./2023/062"
@@ -24,12 +26,12 @@ body.appendChild(yearInput)
 const dayInput = document.createElement("input")
 dayInput.placeholder = "day"
 dayInput.type = "number"
-dayInput.value = "7"
+dayInput.value = "8"
 body.appendChild(dayInput)
 const partInput = document.createElement("input")
 partInput.placeholder = "part"
 partInput.type = "number"
-partInput.value = "1"
+partInput.value = "2"
 body.appendChild(partInput)
 const input = document.createElement("textarea")
 input.placeholder = "input"
