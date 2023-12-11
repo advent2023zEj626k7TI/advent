@@ -3,17 +3,33 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const {CleanWebpackPlugin} = require("clean-webpack-plugin");
 
 module.exports = {
-  entry: path.resolve(__dirname, './src/index.ts'),
+  devtool: 'source-map',
+  target: 'es2020',
   experiments: {
     outputModule: true,
     topLevelAwait: true,
   },
+  externalsType: 'import',
+  externals: [
+      (ctx, callback) => {
+          // make @arcgis/ external
+          if (ctx.request === "node:fs/promises") {
+              // move to webgen/ namespace
+              return callback(null, `.`);
+          }
+          return callback();
+      },
+  ],
+  entry: path.resolve(__dirname, './src/index.ts'),
   module: {
     rules: [
       {
         test: /\.tsx?$/,
-        use: 'ts-loader',
+        loader: "esbuild-loader",
         exclude: /node_modules/,
+        options: {
+          target: "es2020",
+        },
       },
     ],
   },
@@ -31,9 +47,9 @@ module.exports = {
       scriptLoading: "module",
     })
   ],
-  devtool: "source-map",
   mode: "development",
   devServer: {
-    port: 3000
-  }
+    port: 3000,
+    hot: false,
+  },
 };

@@ -1,0 +1,22 @@
+{
+  "targets": {
+    "debug": {
+      "outFile": "assemblyscriptDist/debug.wasm",
+      "textFile": "assemblyscriptDist/debug.wat",
+      "sourceMap": true,
+      "debug": true
+    },
+    "release": {
+      "outFile": "assemblyscriptDist/release.wasm",
+      "textFile": "assemblyscriptDist/release.wat",
+      "sourceMap": true,
+      "optimizeLevel": 3,
+      "shrinkLevel": 0,
+      "converge": false,
+      "noAssert": false
+    }
+  },
+  "options": {
+    "bindings": "esm"
+  }
+}
