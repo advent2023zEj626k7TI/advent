@@ -4,7 +4,7 @@ const {CleanWebpackPlugin} = require("clean-webpack-plugin");
 
 module.exports = {
   devtool: 'source-map',
-  target: 'es2020',
+  target: 'es2022',
   experiments: {
     outputModule: true,
     topLevelAwait: true,
@@ -28,7 +28,7 @@ module.exports = {
         loader: "esbuild-loader",
         exclude: /node_modules/,
         options: {
-          target: "es2020",
+          target: "es2022",
         },
       },
     ],

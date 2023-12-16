@@ -2,8 +2,8 @@
     "compilerOptions": {
         "outDir": "./dist/",
         "noImplicitAny": true,
-        "module": "es2020",
-        "target": "es2020",
+        "module": "es2022",
+        "target": "es2022",
         "allowJs": false,
         "strict": true,
         "moduleResolution": "node"
