@@ -1,3 +1,5 @@
+import "./2023/172"
+import "./2023/171"
 import "./2023/162"
 import "./2023/161"
 import "./2023/152"
@@ -42,7 +44,7 @@ body.appendChild(yearInput)
 const dayInput = document.createElement("input")
 dayInput.placeholder = "day"
 dayInput.type = "number"
-dayInput.value = "16"
+dayInput.value = "17"
 body.appendChild(dayInput)
 const partInput = document.createElement("input")
 partInput.placeholder = "part"
